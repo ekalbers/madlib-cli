@@ -43,8 +43,13 @@ def merge(string, parts):
     return new_string.strip()
 
 
+def create_file(string):
+    with open('assets/copy_make_me_a_video_game_template.txt', 'w') as writer:
+        writer.write(string)
+
+
 def main():
-    text, parts = parse_template(read_template('../assets/make_me_a_video_game_template.txt'))
+    text, parts = parse_template(read_template('assets/make_me_a_video_game_template.txt'))
     parts_input = ()
     print('*************')
     print('***MADLIBS***')
@@ -52,7 +57,9 @@ def main():
     print('\nSubmit words that match the word types requested!\n')
     for x in parts:
         parts_input += (input(f'{x}:'),)
-    print(f'\n{merge(text,parts_input)}')
+    new_file = merge(text, parts_input)
+    create_file(new_file)
+    print(f'\n{new_file}')
 
 
 if __name__ == '__main__':
