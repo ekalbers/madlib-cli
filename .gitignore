@@ -1,5 +1,7 @@
 Source: https://github.com/github/gitignore/blob/master/Python.gitignore
 
+./assets/copy_make_me_a_video_game_template.txt
+
 # User generated
 ENV/
 .vscode
